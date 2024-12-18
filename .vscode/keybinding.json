@@ -1,0 +1,22 @@
+[
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Next.js Dev"
+    },
+    {
+        "key": "ctrl+alt+b",
+        "command": "workbench.action.tasks.runTask",
+        "args": "FastAPI Run (Backend)"
+    },
+    {
+        "key": "ctrl+alt+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Run Web + Backend"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "workbench.action.tasks.runTask",
+        "args": "Docker Compose Up"
+    }
+] 

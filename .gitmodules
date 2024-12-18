@@ -1,0 +1,6 @@
+[submodule "hospital-frontend"]
+	path = hospital-frontend
+	url = https://github.com/kcj4800/hospital-frontend.git
+[submodule "hospital-backend"]
+	path = hospital-backend
+	url = https://github.com/kcj4800/hospital-backend.git

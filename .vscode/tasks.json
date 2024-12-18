@@ -1,0 +1,65 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Next.js Dev",
+            "type": "shell",
+            "command": "yarn",
+            "args": [
+                "dev"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/hospital-frontend"
+            },
+            "windows": {
+                "options": {
+                    "shell": {
+                        "executable": "cmd.exe",
+                        "args": ["/c"]
+                    }
+                }
+            },
+            "group": "build"
+        },
+        {
+            "label": "FastAPI Run (Backend)",
+            "type": "shell",
+            "command": "${workspaceFolder}/backend/venv/Scripts/python",
+            "args": [
+                "-m",
+                "uvicorn",
+                "main:app",
+                "--reload",
+                "--host",
+                "0.0.0.0",
+                "--port",
+                "8000"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/backend"
+            },
+            "group": "build"
+        },
+        {
+            "label": "Run Web + Backend",
+            "dependsOn": [
+                "Next.js Dev",
+                "FastAPI Run (Backend)"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Docker Compose Up",
+            "type": "shell",
+            "command": "docker-compose up --build",
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": "build",
+            "problemMatcher": []
+        }
+    ]
+}
